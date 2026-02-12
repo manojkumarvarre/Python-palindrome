@@ -5,7 +5,6 @@ while True:
     ch = input("Enter choice: ")
 
     try:
-        # Add Student
         if ch == "1":
             roll = int(input("Roll: "))
 
@@ -23,29 +22,20 @@ while True:
 
             students[roll] = (name, age, section, (m1, m2, m3))
             print("Added")
-
-        # Display
         elif ch == "2":
             print(students)
 
-        # Search
         elif ch == "3":
             r = int(input("Roll: "))
             print(students.get(r, "Not found"))
-
-        # Remove
         elif ch == "4":
             r = int(input("Roll: "))
             students.pop(r, "Not found")
-
-        # Topper
         elif ch == "5":
             if students:
                 top = max(students.items(),
                           key=lambda x: sum(x[1][3]))
                 print("Topper:", top)
-
-        # Unique Sections
         elif ch == "6":
             sec = set()
             for s in students.values():
